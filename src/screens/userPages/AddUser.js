@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { apiCalling } from "../../apiService/apiCalling";
-import './user.css';
+import './User.css';
 
 export default function AddUser() {
     const token = useSelector((state) => state.auth.token);

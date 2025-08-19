@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './screens/loginPages/login.js';
+import Login from './screens/loginPages/Login.js';
 import MainLayout from './screens/mainPages/MainLayout.js';
 import Dashboard from './screens/mainPages/Dashboard.js';
 import { useSelector } from 'react-redux';
