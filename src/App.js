@@ -14,7 +14,6 @@ function App() {
 
   const token = useSelector((state) => state.auth.token);
 
-  console.log('token   ', token);
 
   return (
     <Router>
