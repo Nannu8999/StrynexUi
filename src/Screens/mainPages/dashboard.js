@@ -17,6 +17,7 @@ import '@coreui/coreui/dist/css/coreui.min.css';
 export default function Dashboard() {
     return (
         <CRow>
+
             <CCol sm={6}>
                 <CWidgetStatsA
                     className="mb-4"
