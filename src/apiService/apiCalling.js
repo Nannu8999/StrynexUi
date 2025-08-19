@@ -1,5 +1,5 @@
 import axiosInstance from './axiosInstance';
-import { triggerToast } from '../screens/toasters/toastService';
+import { triggerToast } from '../screens/toasters/ToastService';
 import store from '../redux/store';
 import { clearAuthData } from '../redux/slices/authSlice';
 

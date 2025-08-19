@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './screens/loginPages/login';
-import MainLayout from './screens/mainPages/mainLayout';
-import Dashboard from './screens/mainPages/dashboard';
+import Login from './screens/loginPages/Login.js';
+import MainLayout from './screens/mainPages/MainLayout.js';
+import Dashboard from './screens/mainPages/Dashboard.js';
 import { useSelector } from 'react-redux';
-import UserListing from './screens/userPages/userListing.js';
-import AddUser from './screens/userPages/addUser';
-import ViewUser from './screens/userPages/viewUser';
-import CourseCatalogue from './screens/courseCatalogue/courseCatalogue.js';
-import TakeCourse from './screens/courseCatalogue/takeCourse.js';
-import GlobalToastContainer from './screens/toasters/globalToastContainer';
+import UserListing from './screens/userPages/UserListing.js';
+import AddUser from './screens/userPages/AddUser.js';
+import ViewUser from './screens/userPages/ViewUser.jsx';
+import CourseCatalogue from './screens/courseCatalogue/CourseCatalogue.js';
+import TakeCourse from './screens/courseCatalogue/TakeCourse.js';
+import GlobalToastContainer from './screens/toasters/GlobalToastContainer.js';
 
 function App() {
 

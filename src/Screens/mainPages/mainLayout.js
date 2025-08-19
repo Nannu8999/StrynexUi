@@ -1,5 +1,5 @@
-import Sidebar from '../menusPages/sideBar';
-import Topbar from '../menusPages/topBar';
+import Sidebar from '../menusPages/SideBar';
+import Topbar from '../menusPages/TopBar';
 import { Outlet } from 'react-router-dom';
 import { CContainer } from '@coreui/react';
 

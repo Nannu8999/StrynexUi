@@ -1,7 +1,7 @@
 // ToastContainerGlobal.js
 import React, { useRef, useState, useEffect } from 'react';
 import { CToast, CToastBody, CToaster, CToastHeader } from '@coreui/react';
-import { setShowToast } from './toastService';
+import { setShowToast } from './ToastService';
 
 const GlobalToastContainer = () => {
     const [toast, addToast] = useState();
