@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './screens/login/login';
-import MainLayout from './screens/mainLayout';
-import Dashboard from './screens/dashboard';
+import MainLayout from './screens/mainPages/mainLayout';
+import Dashboard from './screens/mainPages/dashboard';
 import { useSelector } from 'react-redux';
 import UserListing from './screens/user/userListing';
 import AddUser from './screens/user/addUser';
