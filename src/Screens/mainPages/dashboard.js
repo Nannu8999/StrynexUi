@@ -1,4 +1,3 @@
-import React from 'react';
 import CIcon from '@coreui/icons-react';
 import { cilArrowTop, cilOptions } from '@coreui/icons';
 import { CChartBar, CChartLine } from '@coreui/react-chartjs';
