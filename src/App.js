@@ -6,14 +6,23 @@ import { useSelector } from 'react-redux';
 import UserListing from './screens/user/userListing';
 import AddUser from './screens/user/addUser';
 import ViewUser from './screens/user/viewUser';
+import CourseCatalogue from './screens/courseCatalogue/courseCatalogue';
+import TakeCourse from './screens/courseCatalogue/takeCourse';
+import GlobalToastContainer from './screens/toasters/globalToastContainer';
 
 function App() {
 
   const token = useSelector((state) => state.auth.token);
 
+  console.log('token   ', token);
+
   return (
     <Router>
+
+      <GlobalToastContainer />
+
       <Routes>
+
         {/* Public Route */}
         <Route path="/" element={<Login />} />
 
@@ -21,12 +30,19 @@ function App() {
         {/* Protected Route with Layout */}
         {token && (
           <Route path="/" element={<MainLayout />}>
-            <Route index element={<Navigate to="/dashboard" replace />} />
 
+            <Route index element={<Navigate to="/dashboard" replace />} />
             <Route path="dashboard" element={<Dashboard />} />
+
+
             <Route path="userListing" element={<UserListing />} />
             <Route path="addUser" element={<AddUser />} />
             <Route path="viewUser/:userId" element={<ViewUser />} />
+
+
+            <Route path="courseCatalogue" element={<CourseCatalogue />} />
+            <Route path="takeCourse" element={<TakeCourse />} />
+
           </Route>
         )}
 

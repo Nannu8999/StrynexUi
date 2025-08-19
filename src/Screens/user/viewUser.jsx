@@ -5,6 +5,7 @@ import { apiCalling } from "../../apiService/apiCalling";
 import './user.css';
 
 export default function ViewUser() {
+
     const { userId } = useParams(); // get userId from URL
     const token = useSelector((state) => state.auth.token);
     const [userData, setUserData] = useState(null);

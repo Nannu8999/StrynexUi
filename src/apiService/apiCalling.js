@@ -1,4 +1,7 @@
 import axiosInstance from './axiosInstance';
+import { triggerToast } from '../screens/toasters/toastService';
+import store from '../redux/store';
+import { clearAuthData } from '../redux/slices/authSlice';
 
 export const apiCalling = async ({
     url,
@@ -8,14 +11,8 @@ export const apiCalling = async ({
     queryParams = {},
 }) => {
     try {
-        const config = {
-            method,
-            url,
-            headers,
-            params: queryParams
-        };
+        const config = { method, url, headers, params: queryParams };
 
-        // Handle different content types
         if (body) {
             if (headers['Content-Type'] === 'application/json') {
                 config.data = JSON.stringify(body);
@@ -25,7 +22,7 @@ export const apiCalling = async ({
                     formData.append(key, body[key]);
                 }
                 config.data = formData;
-                delete headers['Content-Type']; // browser will set it with boundary
+                delete headers['Content-Type'];
             } else {
                 config.data = body;
             }
@@ -34,8 +31,15 @@ export const apiCalling = async ({
         const response = await axiosInstance(config);
         return response.data;
 
+
     } catch (error) {
-        // Optional: you can add toast or logging here
+        if (error.response?.status === 401) {
+            triggerToast('Session expired. Please log in again.');
+            store.dispatch(clearAuthData()); // remove token & user
+            setTimeout(() => {
+                window.location.href = '/'; // redirect to login
+            }, 1500);
+        }
         throw error.response?.data || error;
     }
 };

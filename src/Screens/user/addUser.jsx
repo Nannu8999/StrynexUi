@@ -47,7 +47,7 @@ export default function AddUser() {
 
         try {
             await apiCalling({
-                url: '/AddUser',
+                url: '/CreateUser',
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -56,6 +56,7 @@ export default function AddUser() {
             });
 
             alert('User added successfully!');
+
             setFormData({
                 firstName: '',
                 middleName: '',
